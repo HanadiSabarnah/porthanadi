@@ -1,39 +1,23 @@
-import React,{useEffect,useState} from "react"
-import sanityClient from "../client.js"
-import imageUrlBuilder from "@sanity/image-url"
+import React from "react"
 
-
-
-
-const builder = imageUrlBuilder(sanityClient)
-function urlFor(source){
-    return builder.image(source)
-}
+import pro from '../assets/images/hanadi.jpg';
 
 const About = () => {
-  const [author,setAuthor] = useState(null)
-
-  useEffect(()=>{
-      sanityClient
-      .fetch(`
-      *[_type == "author"]{
-          name,
-          bio,            
-          "authorImage": image.asset->url
-                     
-      }`)
-      .then((data)=>setAuthor(data[0]))
-      .catch(console.error)
-  },[]);
-
-  if(!author) return <div>Loading....</div>
+  const [header] = React.useState({
+   
+    
+      
+      imgSrc: pro,
+     
+    } );
+  
  
   return (
     <div className="about">
       <div className="container">
         <div className="common">
           <h1 className="mainHeader">About Me</h1> <br/> 
-          <img className="image"src={urlFor(author.authorImage).url()}  alt={author.name} />
+          <img className="image"src={ header.imgSrc}  alt={header.imgSrc} />
           
           <p className="mainContent">I enjoy being challenged and engaging with projects that require me to work outside my comfort and knowledge set, as continuing to learn new languages and development techniques are important to me . </p>
           <br/> <br/> <h3 className="mainHeader">Work With Me</h3>

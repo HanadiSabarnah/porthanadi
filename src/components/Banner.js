@@ -1,31 +1,17 @@
 
 
-import React,{useEffect,useState} from "react"
-import sanityClient from "../client.js"
+import React from "react"
+
 import { SocialIcon } from "react-social-icons"
 
-// import imageUrlBuilder from "@sanity/image-url"
-
-
-import BlockContent from "@sanity/block-content-to-react"
-
 const Banner = () => {
-  const [author,setAuthor] = useState(null)
-
-    useEffect(()=>{
-        sanityClient
-        .fetch(`
-        *[_type == "author"]{
-            name,
-            bio,            
-            "authorImage": image.asset->url
-                       
-        }`)
-        .then((data)=>setAuthor(data[0]))
-        .catch(console.error)
-    },[]);
-
-    if(!author) return <div>Loading....</div>
+  const [state] = React.useState({
+    title: "Hanadi Sabarnah",
+    text1:
+      "Software Developer.",
+      text2:
+      "“I'm not a great programmer; I'm just a good programmer with great habits.”",
+  });
   
   return (
     <header className="header">
@@ -34,9 +20,9 @@ const Banner = () => {
           <div className="col-6">
             <div className="header__content">
               <div className="header__section">
-                <h1> {author.name}</h1>
-                <h2><b> Software Developer</b></h2>
-                <h2><b> <BlockContent blocks={author.bio} projectId="9drzfsju" dataset="production" /></b></h2>
+              <h1>{state.title}</h1>
+                <h2><b>{state.text1}</b></h2>
+                <h2><b> {state.text2}</b></h2>
                 <br/>  <br/>
                 <ul className="contactCircles">
                 
