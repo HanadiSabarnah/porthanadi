@@ -20,6 +20,7 @@ const Banner = () => {
           <div className="col-6">
             <div className="header__content">
               <div className="header__section">
+                <br/> <br/> <br/>
               <h1>{state.title}</h1>
                 <h2><b>{state.text1}</b></h2>
                 <h2><b> {state.text2}</b></h2>

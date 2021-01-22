@@ -30,7 +30,7 @@ const About = () => {
                             <span className="mainContent1" role="img" aria-label="right pointer">  Phone No. +972  597621673</span> 
                             <br/> <br/> 
 
-                            <a href="https://drive.google.com/file/d/1iN5QKkstuxL-5Z1q3a2PN_eMRi2tP_uZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" >
+                            <a href="https://drive.google.com/file/d/1KfY5N4k0EkrbVX-qtrRcUVX4LVDpdce0/view?usp=sharing" target="_blank" rel="noopener noreferrer" >
                             <span  className="mainContent1">   Resume </span> 
                              
                             </a>
